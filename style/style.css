@@ -1,0 +1,268 @@
+body {
+    background-color: #fffafa;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.div-background-picture {
+    background-image: url(../images/header_pict.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    height: 25rem;
+    opacity: .9;
+    border-bottom: .3rem solid lightgray;
+}
+
+.nav-menu {
+    background-color: #52690c44;
+    position: sticky;
+    top: 0rem;
+    z-index: 1;
+}
+
+.nav-menu-list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu-item {
+    padding: 1.3rem 0;
+}
+
+.nav-menu-link {
+    padding: 1.3rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: #f1d095;
+}
+
+.div-right-btn {
+    position: absolute;
+    top: .8rem;
+    right: 1rem;
+}
+
+.enter-btn {
+    background-color: #52690c22;
+    border: .14rem solid white;
+    border-radius: .8rem;
+    color: white;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    height: 2.5rem;
+    width: 8rem;
+    cursor: pointer;
+} 
+
+.enter-btn:hover {
+    border: .14rem solid #f1d095;
+    color: #f1d095;
+} 
+
+.div-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.div-header-title {
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px #3b5005;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.div-header-title-name {
+    font-family: "Great Vibes", cursive;
+    font-size: 7rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px #3b5005;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    border: .1rem solid lightgray;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+.div-main-title {
+    text-align: center;
+    font-size: 2rem;
+    color: gray;
+    margin-bottom: 1rem;
+}
+
+.div-promo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem
+}
+
+.div-promo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .4rem solid red;
+    border-radius: 2rem;
+    height: 5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+    width: 80%;
+}
+
+.div-promo-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .2rem solid green;
+    border-radius: 2rem;
+    height: 5rem;
+    font-size: 2rem;
+    color: green;
+    width: 70%;
+}
+
+.div-cards-services {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 85%;
+}
+
+.div-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
+    width: 29%;
+    border: .1rem solid gray;
+    border-radius: 2rem;
+    box-shadow: 0 .1rem .2rem #00000031;
+    padding: .7rem;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.div-card:hover {
+    box-shadow: 0 .1rem .7rem #00000088;
+}
+
+.img-serveces {
+    border-radius: 1rem;
+    opacity: .8;
+    margin-bottom: .5rem;
+    width: 80%;
+}
+
+.div-card:hover > .img-serveces {
+    opacity: 1;
+}
+
+.description {
+    font-size: .9rem;
+}
+
+.form-subscribe {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: .7rem;
+    padding: 1.2rem;
+    width: 50%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.input-subscribe {
+    font-size: 1.4rem;
+    padding: 0.3rem;
+    border: .1rem solid gray;
+    background-color: white;
+    border-radius: .5rem;
+    height: 3rem;
+    width: 90%;
+}
+
+.button-subscribe{
+    font-size: 1.5rem;
+    padding: .7rem;
+    border: .3rem solid white;
+    border-radius: .8rem;
+    background-color: #667a28;
+    color: white;
+    width: 50%;
+    cursor: pointer;
+}
+
+.div-pictures {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.img-salon {
+    border-radius: 1rem;
+    width: 30%;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: .2rem solid lightgray;
+    background-color: #52690c22;
+    height: 5rem;
+}
+
+.footer-ul-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0 ;
+}
+
+.footer-ul-link {
+    padding: 1.3rem;
+    text-decoration: none;
+    color: darkgray;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer-ul-item {
+    padding: 1rem;
+}
+
+.footer-ul-link:hover {
+    color: #f1d095;
+}
