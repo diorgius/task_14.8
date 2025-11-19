@@ -1,7 +1,10 @@
-<!-- <?php
-session_start();
-$auth = $_SESSION['auth'] ?? null;
-?> -->
+<?php
+    session_start();
+    $auth = $_SESSION['auth'] ?? null;
+    $id = $_SESSION['id'] ?? null;
+    $username = $_SESSION['username'] ?? null;
+    $birthday = $_SESSION['birthday'] ?? null;
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,11 +27,23 @@ $auth = $_SESSION['auth'] ?? null;
                     <li class="nav-menu-item"><a class="nav-menu-link" href="#about">О нас</a></li> 
                     <li class="nav-menu-item"><a class="nav-menu-link" href="#contacts">Контакты</a></li>
                 </ul>
-                <div class="div-right-btn"><button class="button-enter" onclick="location.href='login.php'">Войти</button></div>
+                <?php
+                    if (!$username) { ?>
+                    <div class="div-right-btn"><button class="button-enter" onclick="location.href='login.php'">Войти</button></div>
+                <?php 
+                    } else { ?>
+                        <div class="div-right-btn"><button class="button-enter" onclick="location.href='logoff.php'">Выйти</button></div>
+                <?php } ?>
             </nav>
             <div class="div-header">
                 <div class="div-header-title">Добро пожаловать в наш SPA-салон</div>
                 <div class="div-header-title-name">Красота и Здоровье</div>
+    <?php
+    echo $auth;
+    echo $id;
+    echo $username;
+    echo $birthday;
+    ?>
             </div>
         </div>
     </header>
