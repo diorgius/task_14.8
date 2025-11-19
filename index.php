@@ -10,7 +10,7 @@ $auth = $_SESSION['auth'] ?? null;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/style_index.css">
     <title>Красота и Здоровье</title>
 </head>
 <body>
@@ -24,7 +24,7 @@ $auth = $_SESSION['auth'] ?? null;
                     <li class="nav-menu-item"><a class="nav-menu-link" href="#about">О нас</a></li> 
                     <li class="nav-menu-item"><a class="nav-menu-link" href="#contacts">Контакты</a></li>
                 </ul>
-                <div class="div-right-btn"><button class="enter-btn">Войти</button></div>
+                <div class="div-right-btn"><button class="button-enter" onclick="location.href='login.php'">Войти</button></div>
             </nav>
             <div class="div-header">
                 <div class="div-header-title">Добро пожаловать в наш SPA-салон</div>
