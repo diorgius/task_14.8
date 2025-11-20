@@ -1,6 +1,11 @@
 <?php
     session_start();
     $auth = $_SESSION['auth'] ?? null;
+    // проверка существования файла и его размера (есть ли пользователи)
+    if (!file_exists(__DIR__ . '\\data\\users.json') || filesize(__DIR__ . '\\data\\users.json') === 0) { 
+        $_SESSION['firstUser'] = true;
+        $_SESSION['error'] = 'Нет данных по пользователям, необходимо зарегистрироваться';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +24,7 @@
                 <input class="input-login" name="password" type="password" placeholder="пароль" required>
                 <div class="div-wrap-input" id="divwrap"></div>
                 <button class="button-login" value="login" id="loginButton" name="submit" type="submit">Войти</button>
-                <button class="button-login" value="registration" id="regButton" name="submit"
-                    type="submit">Зарегистрироваться</button>
+                <button class="button-login" value="registration" id="regButton" name="submit" type="submit">Зарегистрироваться</button>
             </form>
             <div class="div-wrap">
             <?php } 

@@ -1,39 +1,33 @@
 <?php
-    function getUsersList($users_array) { // возвращает массив всех пользователей и хэшей их паролей
-        // echo '<pre>';
-        // print_r($users_array);
-        // echo '</pre>';
-        // $users =[];
-        // foreach ($users_array as $key) {
+    // возвращает массив всех пользователей и хэшей их паролей
+    function getUsersList($usersArray) {
+        // foreach ($usersArray as $key) { // выриант с циклом
         //     $users[$key['login']] = $key['pass'];
         // }
-        return $users = array_column($users_array, 'password', 'login');
+        return $users = array_column($usersArray, 'password', 'login');
     }
 
-    function existsUser($login, $users) { // проверяет, существует ли пользователь с указанным логином
-        // echo '<pre>';
-        // print_r($users);
-        // echo '</pre>';
+    // проверяет, существует ли пользователь с указанным логином
+    function existsUser($login, $users) { 
         // return isset($users[$login]) ? $users[$login] : null;
         return $users[$login] ?? null;
     }
 
-    function checkPassword($login, $password, $users) { // возвращает true тогда, когда существует пользователь с указанным логином и введенный им пароль прошел проверку, иначе — false
-        // echo $users[$login].'<br>';
-        // $pass = $users[$login] ?? null;
-        // echo $password.'<br>';
+    // возвращает true тогда, когда существует пользователь с указанным логином и введенный им пароль прошел проверку, иначе — false
+    function checkPassword($login, $password, $users) { 
         return password_verify($password, $users[$login]);
     }
 
-function getCurrentUser($login, $users_array) { // возвращает либо имя вошедшего на сайт пользователя, либо null
-    foreach ($users_array as $key) {
-        if ($login === $key['login']) {
-            $_SESSION['auth'] = true;
-            $_SESSION['userid'] = $key['id'];
-            $_SESSION['username'] = $key['name'];
-            $_SESSION['userbirthday'] = $key['birthday'];
-            $_SESSION['userlogintime'] = time();
+    // возвращает либо имя вошедшего на сайт пользователя, либо null
+    function getCurrentUser($login, $usersArray) { 
+        foreach ($usersArray as $key) {
+            if ($login === $key['login']) {
+                $_SESSION['auth'] = true;
+                $_SESSION['userid'] = $key['id'];
+                $_SESSION['username'] = $key['name'];
+                $_SESSION['userbirthday'] = $key['birthday'];
+                $_SESSION['userlogintime'] = time();
+            }
         }
+        return;
     }
-    return;
-}
