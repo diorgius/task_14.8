@@ -1,11 +1,11 @@
 <?php
     session_start();
     $auth = $_SESSION['auth'] ?? null;
-    $id = $_SESSION['id'] ?? null;
+    $userid = $_SESSION['userid'] ?? null;
     $username = $_SESSION['username'] ?? null;
-    $birthday = $_SESSION['birthday'] ?? null;
-    $logintime = $_SESSION['logintime'] ?? null;
-    ?>
+    $userbirthday = $_SESSION['userbirthday'] ?? null;
+    $userlogintime = $_SESSION['userlogintime'] ?? null;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,16 +37,9 @@
                 <?php } ?>
             </nav>
             <div class="div-header">
-                <div class="div-header-title">Добро пожаловать в наш SPA-салон</div>
+                <div class="div-header-title"><?php echo $username ? $username . ' д' : 'Д';?>обро пожаловать в наш SPA-салон</div>
                 <div class="div-header-title-name">Красота и Здоровье</div>
-                <div class="div-header-title-user"><?php echo $username;?></div>
-    <?php
-    echo $auth;
-    echo $id;
-    echo $username;
-    echo $birthday;
-    echo $logintime;
-    ?>
+                <div class="div-header-title-user"><?php echo $userbirthday . ' ' .$userlogintime;?></div>
             </div>
         </div>
     </header>

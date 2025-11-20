@@ -1,10 +1,10 @@
 <?php
 session_start();
 unset($auth);
-unset($id);
+unset($userid);
 unset($username);
-unset($birthday);
-unset($logintime);
+unset($userbirthday);
+unset($userlogintime);
 session_unset();
 session_destroy();
 header("Location: index.php");

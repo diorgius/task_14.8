@@ -2,7 +2,6 @@
     session_start();
     $auth = $_SESSION['auth'] ?? null;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,20 +12,23 @@
 </head>
 <body>
     <main class="main">
-        <?php if(!$auth) { ?>
-            <form class="form-login" action="authentication.php" method="post">
-                <input class="input-login" name="login" type="text" placeholder="Логин" required>
-                <input class="input-login" name="password" type="password" placeholder="Пароль" required>
-                <!-- <input class="input-login" name="birthday" type="date" placeholder="Дата рождения" required> -->
-                <button class="button-login" value="login" name="submit" type="submit">Войти</button>
-                <button class="button-login" value="registration" name="submit" type="submit">Зарегистрироваться</button>
+        <?php if (!$auth) { ?>
+            <form class="form-login" id="formlogin" action="authentication.php" method="post">
+                <label for="id">Электронная почта</label>
+                <input class="input-login" name="login" id="login" type="email" placeholder="email@example.com" required>
+                <input class="input-login" name="password" type="password" placeholder="пароль" required>
+                <div class="div-wrap-input" id="divwrap"></div>
+                <button class="button-login" value="login" id="loginButton" name="submit" type="submit">Войти</button>
+                <button class="button-login" value="registration" id="regButton" name="submit"
+                    type="submit">Зарегистрироваться</button>
             </form>
-        <div class="div-wrap">
-            <?php } ?>
-            <?php if (isset($_SESSION['error'])) { ?>
-                <div class="div-auth-error"><?php echo $_SESSION['error']?></div>
-            <?php unset($_SESSION['error']); } ?>
-        </div>
+            <div class="div-wrap">
+            <?php } 
+                if (isset($_SESSION['error'])) { ?>
+                    <div class="div-auth-error"><?php echo $_SESSION['error'] ?></div>
+                <?php unset($_SESSION['error']); } ?>
+            </div>
     </main>
+    <script src="./script/script.js"></script>
 </body>
 </html>
