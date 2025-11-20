@@ -96,6 +96,13 @@ body {
     text-shadow: 2px 2px 5px #3b5005;
 }
 
+.div-header-title-user {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px #3b5005;
+}
+
 .section {
     display: flex;
     flex-direction: column;

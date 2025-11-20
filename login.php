@@ -21,10 +21,12 @@
                 <button class="button-login" value="login" name="submit" type="submit">Войти</button>
                 <button class="button-login" value="registration" name="submit" type="submit">Зарегистрироваться</button>
             </form>
-        <?php } ?>
-        <?php if (isset($_GET['error']) && $_GET['error'] == 'auth_error') { ?>
-            <div class="div-auth-error">Неверное имя или пароль</div>
-        <?php } ?>
+        <div class="div-wrap">
+            <?php } ?>
+            <?php if (isset($_SESSION['error'])) { ?>
+                <div class="div-auth-error"><?php echo $_SESSION['error']?></div>
+            <?php unset($_SESSION['error']); } ?>
+        </div>
     </main>
 </body>
 </html>

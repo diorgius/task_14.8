@@ -4,6 +4,7 @@
     $id = $_SESSION['id'] ?? null;
     $username = $_SESSION['username'] ?? null;
     $birthday = $_SESSION['birthday'] ?? null;
+    $logintime = $_SESSION['logintime'] ?? null;
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,11 +39,13 @@
             <div class="div-header">
                 <div class="div-header-title">Добро пожаловать в наш SPA-салон</div>
                 <div class="div-header-title-name">Красота и Здоровье</div>
+                <div class="div-header-title-user"><?php echo $username;?></div>
     <?php
     echo $auth;
     echo $id;
     echo $username;
     echo $birthday;
+    echo $logintime;
     ?>
             </div>
         </div>
