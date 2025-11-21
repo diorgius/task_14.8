@@ -9,19 +9,22 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style_login.css">
     <title>Красота и Здоровье</title>
 </head>
+
 <body>
+
     <main class="main">
         <?php if (!$auth) { ?>
             <form class="form-login" id="formlogin" action="authentication.php" method="post">
                 <label for="id">Электронная почта</label>
-                <input class="input-login" name="login" id="login" type="email" placeholder="email@example.com" required>
-                <input class="input-login" name="password" type="password" placeholder="пароль" required>
+                <input class="input-login" name="login" id="login" type="email" placeholder="email@example.com" value="email@example.com" required>
+                <input class="input-login" name="password" type="password" placeholder="пароль" value="123456" required>
                 <div class="div-wrap-input" id="divwrap"></div>
                 <button class="button-login" value="login" id="loginButton" name="submit" type="submit">Войти</button>
                 <button class="button-login" value="registration" id="regButton" name="submit" type="submit">Зарегистрироваться</button>
@@ -34,5 +37,6 @@
             </div>
     </main>
     <script src="./script/script.js"></script>
+
 </body>
 </html>
