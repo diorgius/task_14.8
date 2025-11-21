@@ -71,6 +71,7 @@
         // записываем весь массив в файл
         file_put_contents($usersDataFile, json_encode($usersArray), FILE_APPEND | LOCK_EX);
         // получаем данные нового пользователя и авторизуемся на главной странице
+        $_SESSION['newRegistration'] = true;
         getCurrentUser($login, $usersArray);
         header("Location: index.php");
         exit();

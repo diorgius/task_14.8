@@ -12,7 +12,7 @@ body {
     background-size: contain;
     background-attachment: fixed;
     height: 25rem;
-    opacity: .9;
+    opacity: .95;
     border-bottom: .3rem solid lightgray;
 }
 
@@ -85,6 +85,7 @@ body {
 
 .div-header-title {
     font-size: 2rem;
+    font-weight: 600;
     text-shadow: 2px 2px 5px #3b5005;
     color: white;
     margin-bottom: 1rem;
@@ -92,7 +93,7 @@ body {
 
 .div-header-title-name {
     font-family: "Great Vibes", cursive;
-    font-size: 7rem;
+    font-size: 8rem;
     font-weight: bold;
     color: white;
     text-shadow: 2px 2px 5px #3b5005;
@@ -100,9 +101,10 @@ body {
 
 .div-header-title-user {
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: normal;
     color: white;
     text-shadow: 2px 2px 5px #3b5005;
+    margin-top: .6rem;
 }
 
 .main {
@@ -121,6 +123,102 @@ body {
     padding: 1rem;
     background-color: white;
     width: 70vw;
+}
+
+.div-promo-birthday-sertificate {
+    border: .1rem solid lightgray;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: white;
+    width: 70vw;
+    font-size: 2rem;
+    font-weight: 400;
+    color: grey;
+    margin: 1rem;
+    text-align: center;
+}
+
+.section-birthday {
+    background-image: url(../images/birthday_pict.png);
+    background-position: top;
+    background-size: 100% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    border: .2rem solid red;
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: white;
+    height: 25rem;
+    width: 70vw;
+}
+
+.div-promo-birthday {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Great Vibes", cursive;
+    font-size: 8rem;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 1px 2px 15px #9e0606;  
+    height: 45%;
+    width: 100%;
+}
+
+.div-promo-discont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    width: 80%;
+    font-size: 1.5rem;
+    color: red;
+    text-align: center;
+}
+
+.div-discont-percent {
+    font-size: 8rem;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 1px 2px 15px #9e0606;
+    margin: 0;
+}
+
+.div-discont-title {
+    font-size:3rem;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 1px 2px 10px #9e0606;  
+}
+
+.div-promo-newuser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: gold;
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 1rem;
+    width: 97%;
+    height: 100%;
+}
+
+.div-promo-newuser-title {
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+    color: white; 
+}
+
+.div-promo-newuser-counter {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: red; 
 }
 
 .div-main-title {
@@ -224,6 +322,7 @@ body {
     border-radius: .5rem;
     height: 3rem;
     width: 90%;
+    text-align: center;
 }
 
 .button-subscribe{

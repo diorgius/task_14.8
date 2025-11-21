@@ -53,9 +53,10 @@
             $nextUserBirthday = substr_replace($userBirthday, date('Y') + 1, 0, 4);
         $nextUserbirthdaySecond = strtotime($nextUserBirthday);
         $diffrentTime = $nextUserbirthdaySecond - time();
-        $day = floor($diffrentTime / 86400);
+        $day = ceil($diffrentTime / 86400);
+        // возвращаем true если др или количество дней до него
         $birthdayDateUntil = substr_replace($userBirthday, '', 0, 5) === date('m-d', time()) ? 
-            'Поздравляем с Днем Рождения' : dateEndingWords($day, 'day');
+            true : dateEndingWords($day, 'day');
         return $birthdayDateUntil;
     }
 

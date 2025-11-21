@@ -6,6 +6,8 @@
     $userName = $_SESSION['userName'] ?? null;
     $userBirthday = $_SESSION['userBirthday'] ?? null;
     $userLoginTime = $_SESSION['userLoginTime'] ?? null;
+    $newRegistration = $_SESSION['newRegistration'] ?? null;
+    $userBirthdayCount = birthdayCount($userBirthday);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./style/style_index.css">
     <title>Красота и Здоровье</title>
@@ -47,22 +48,48 @@
             <div class="div-header">
                 <div class="div-header-title"><?php echo $userName ? $userName . ' д' : 'Д'; ?>обро пожаловать в наш SPA-салон</div>
                 <div class="div-header-title-name">Красота и Здоровье</div>
-                <div class="div-header-title-user"><?php echo $userName ? birthdayCount($userBirthday) . 
-                        ' - ' . discountCount($userLoginTime) : null; ?></div>
+                <div class="div-header-title-user"> 
+                    <?php echo $userName && $userBirthdayCount != 1 ? 'Ваш День рождения через ' . $userBirthdayCount : null; ?>
+                </div>
             </div>
         </div>
     </header>
 
     <main class="main">
-
+        <?php if (!$newRegistration && $userBirthdayCount == 1) { ?>
+            <div class="div-promo-birthday-sertificate">Мы Вас поздравляем и дарим в подарок сертификат</div>
+            <section id="promo" class="section-birthday">
+                <div class="div-promo-birthday">С Днем рождения!!!</div>
+                <div class="div-promo-discont">
+                    <div class="div-discont-percent">5%</div>
+                    <div class="div-discont-title">на все услуги салона</div>
+                </div>
+            </section>
+        <?php } ?>
+        <?php if ($newRegistration) { ?>
+            <section id="promo" class="section">
+                <div class="div-promo-newuser">
+                    <div class="div-promo-newuser-title">
+                         До окончания Вашей персональной скидки в 10%<br>за регистрацию на нашем сайте 
+                    </div>
+                    <div class="div-promo-newuser-counter">
+                        <?php echo discountCount($userLoginTime); ?>
+                    </div>
+                </div>
+            </section>
+        <?php } ?>
+        <?php if (!$auth) {?>
         <section id="promo" class="section">
             <div class="div-main-title">Акции</div>
             <div class="div-promo">
                 <img class="img-promo" src="images/black_fridey.png" alt="Черная пятница">
                 <div class="div-promo-title">Скидки до 30% на все виды услуг</div>
                 <div class="div-promo-time">Акция действует с 01.11.2025 до 15.12.2025</div>
+                <button type="submit" class="button-subscribe" id="subscribe" 
+                    onclick="location.href='<?php echo !$userName ? 'login.php' : 'discount.php' ?>'">Получить скидку</button>
             </div>
         </section>
+        <?php } ?>
         <section id="services" class="section">
             <div class="div-main-title">Наши услуги</div>
             <div class="div-cards-services">
@@ -113,7 +140,7 @@
         </section>
         <section id="subscribe" class="section">
             <div class="div-main-title">Записаться на сеанс</div>
-            <form action="<?php echo !$userName ? "login.php" : "subscribe.php"?>" metod="post" class="form-subscribe">
+            <form action="<?php echo !$userName ? "login.php" : "subscribe.php" ?>" metod="post" class="form-subscribe">
                 <input type="text" class="input-subscribe" id="name" placeholder="Имя">
                 <input type="tel" class="input-subscribe" id="rel" placeholder="+7 (000) 000-00-00">
                 <button type="submit" class="button-subscribe" id="subscribe">Записаться</button>
