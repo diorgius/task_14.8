@@ -1,3 +1,7 @@
+html { 
+    scroll-behavior: smooth; 
+}
+
 body {
     background-color: #fffafa;
     font-family: "Montserrat", sans-serif;
@@ -19,8 +23,18 @@ body {
 .nav-menu {
     background-color: #52690c44;
     position: sticky;
-    top: 0rem;
-    z-index: 1;
+    top: 0;
+    z-index: 100;
+}
+
+.hidden-nav-menu { 
+    background-color: #52690c;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .nav-menu-list {
@@ -123,6 +137,7 @@ body {
     padding: 1rem;
     background-color: white;
     width: 70vw;
+    scroll-margin-top: 5rem;
 }
 
 .div-promo-birthday-sertificate {
@@ -351,18 +366,19 @@ body {
 
 .footer {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-top: .2rem solid lightgray;
     background-color: #52690c22;
-    height: 5rem;
+    height: 10rem;
 }
 
 .footer-ul-list {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0 ;
+    padding: 0;
 }
 
 .footer-ul-link {
@@ -380,4 +396,16 @@ body {
 
 .footer-ul-link:hover {
     color: #f1d095;
+}
+
+.footer-ul-social-list {
+    display: flex;
+    justify-content: left;
+    list-style: none;
+    margin: .8rem 0 0 0;
+    padding: 0;
+}
+
+.footer-ul-social-link {
+    padding: .5rem;
 }

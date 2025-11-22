@@ -36,7 +36,7 @@
                 <?php unset($_SESSION['error']); } ?>
             </div>
     </main>
-    <script src="./script/script.js"></script>
+    <script src="./script/script_login.js"></script>
 
 </body>
 </html>

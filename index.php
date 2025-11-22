@@ -27,7 +27,7 @@
 
     <header id="home" class="header">
         <div class="div-background-picture">
-            <nav class="nav-menu">
+            <nav id="nav-menu" class="nav-menu">
                 <ul class="nav-menu-list">
                     <li class="nav-menu-item"><a class="nav-menu-link" href="#services">Услуги</a></li>
                     <li class="nav-menu-item"><a class="nav-menu-link" href="#promo">Акции</a></li>
@@ -36,7 +36,7 @@
                     <li class="nav-menu-item"><a class="nav-menu-link" href="#contacts">Контакты</a></li>
                 </ul>
                 <?php
-                if (!$userName) { ?>
+                if (!$auth) { ?>
                     <div class="div-right-btn"><button class="button-enter"
                             onclick="location.href='login.php'">Войти</button></div>
                 <?php
@@ -54,8 +54,25 @@
             </div>
         </div>
     </header>
-
     <main class="main">
+        <nav id="hidden-nav-menu" class="nav-menu hidden-nav-menu" hidden>
+            <ul class="nav-menu-list">
+                <li class="nav-menu-item"><a class="nav-menu-link" href="#services">Услуги</a></li>
+                <li class="nav-menu-item"><a class="nav-menu-link" href="#promo">Акции</a></li>
+                <li class="nav-menu-item"><a class="nav-menu-link" href="#comment">Отзывы</a></li>
+                <li class="nav-menu-item"><a class="nav-menu-link" href="#about">О нас</a></li>
+                <li class="nav-menu-item"><a class="nav-menu-link" href="#contacts">Контакты</a></li>
+            </ul>
+            <?php
+            if (!$auth) { ?>
+                <div class="div-right-btn"><button class="button-enter"
+                        onclick="location.href='login.php'">Войти</button></div>
+            <?php
+            } else { ?>
+                <div class="div-right-btn">Личный кабинет&nbsp&nbsp&nbsp<button class="button-enter"
+                        onclick="location.href='logoff.php'">Выйти</button></div>
+            <?php } ?>
+        </nav>
         <?php if (!$newRegistration && $userBirthdayCount == 1) { ?>
             <div class="div-promo-birthday-sertificate">Мы Вас поздравляем и дарим в подарок сертификат</div>
             <section id="promo" class="section-birthday">
@@ -86,7 +103,7 @@
                 <div class="div-promo-title">Скидки до 30% на все виды услуг</div>
                 <div class="div-promo-time">Акция действует с 01.11.2025 до 15.12.2025</div>
                 <button type="submit" class="button-subscribe" id="subscribe" 
-                    onclick="location.href='<?php echo !$userName ? 'login.php' : 'discount.php' ?>'">Получить скидку</button>
+                    onclick="location.href='<?php echo !$auth ? 'login.php' : 'discount.php' ?>'">Получить скидку</button>
             </div>
         </section>
         <?php } ?>
@@ -140,7 +157,7 @@
         </section>
         <section id="subscribe" class="section">
             <div class="div-main-title">Записаться на сеанс</div>
-            <form action="<?php echo !$userName ? "login.php" : "subscribe.php" ?>" metod="post" class="form-subscribe">
+            <form action="<?php echo !$auth ? "login.php" : "subscribe.php" ?>" metod="post" class="form-subscribe">
                 <input type="text" class="input-subscribe" id="name" placeholder="Имя">
                 <input type="tel" class="input-subscribe" id="rel" placeholder="+7 (000) 000-00-00">
                 <button type="submit" class="button-subscribe" id="subscribe">Записаться</button>
@@ -162,15 +179,22 @@
     </main>
 
     <footer class="footer" id="contacts">
-        <ul class="footer-ul-list">
-            <li class="footer-ul-item"><a class="footer-ul-link" href="#home">Главная</a></li>
-            <li class="footer-ul-item"><a class="footer-ul-link" href="#services">Услуги</a></li>
-            <li class="footer-ul-item"><a class="footer-ul-link" href="#promo">Акции</a></li>
-            <li class="footer-ul-item"><a class="footer-ul-link" href="#comment">Отзывы</a></li>
-            <li class="footer-ul-item"><a class="footer-ul-link" href="#about">O нас</a></li>
-            <li class="footer-ul-item"><a class="footer-ul-link" href="#contacts">Контакты</a></li>
-        </ul>
+            <ul class="footer-ul-list">
+                <li class="footer-ul-item"><a class="footer-ul-link" href="#home">Главная</a></li>
+                <li class="footer-ul-item"><a class="footer-ul-link" href="#services">Услуги</a></li>
+                <li class="footer-ul-item"><a class="footer-ul-link" href="#promo">Акции</a></li>
+                <li class="footer-ul-item"><a class="footer-ul-link" href="#comment">Отзывы</a></li>
+                <li class="footer-ul-item"><a class="footer-ul-link" href="#about">O нас</a></li>
+                <li class="footer-ul-item"><a class="footer-ul-link" href="#contacts">Контакты</a></li>
+            </ul>
+            <ul class="footer-ul-social-list">
+                <li class="footer-ul-social-item"><a class="footer-ul-social-link" href="#"><img src="./images/telega.png" class="img-social" alt=""></a></li>
+                <li class="footer-ul-social-item"><a class="footer-ul-social-link" href="#"><img src="./images/whatsup.png" class="img-social" alt=""></a></li>
+                <li class="footer-ul-social-item"><a class="footer-ul-social-link" href="#"><img src="./images/max.png" class="img-social" alt=""></a></li>
+                <li class="footer-ul-social-item"><a class="footer-ul-social-link" href="#"><img src="./images/vk.png" class="img-social" alt=""></a></li>
+            </ul>
     </footer>
+    <script src="./script/script_index.js"></script>
 
 </body>
 </html>
