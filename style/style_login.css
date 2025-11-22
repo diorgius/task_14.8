@@ -9,14 +9,6 @@ body {
     background-size: cover; 
 }
 
-.main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
 /* .main::before {
     content: "";
     background-image: url(../images/background_login_pict.png);
@@ -28,6 +20,14 @@ body {
     width: 100%;
     height: 100%;
 } */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
 .form-login {
     display: flex;

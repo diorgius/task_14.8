@@ -167,6 +167,41 @@ body {
     background-color: white;
     height: 25rem;
     width: 70vw;
+    cursor: pointer;
+}
+
+.tooltip-text {
+    background-color: #fab1b1;
+    border: .1rem solid red;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    border-radius: 2rem;
+    padding-top: 1.5rem;
+    position: relative;
+    bottom: 107%;
+    z-index: 1;
+    width: 40%;
+    height: 15%;
+    opacity: 0;
+    transition: opacity 0.6s;
+    visibility: hidden;
+}
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -.6rem;
+    border-width: .6rem;
+    border-style: solid;
+    border-color: red transparent transparent transparent;
+}
+
+.section-birthday:hover .tooltip-text {
+    visibility: visible;
+    opacity: .8;
 }
 
 .div-promo-birthday {
@@ -220,6 +255,7 @@ body {
     gap: 1rem;
     width: 97%;
     height: 100%;
+    margin-bottom: 1rem;
 }
 
 .div-promo-newuser-title {

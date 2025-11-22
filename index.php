@@ -73,14 +73,15 @@
                         onclick="location.href='logoff.php'">Выйти</button></div>
             <?php } ?>
         </nav>
-        <?php if (!$newRegistration && $userBirthdayCount == 1) { ?>
+        <?php if (!$newRegistration && $userBirthdayCount === 1) { ?>
             <div class="div-promo-birthday-sertificate">Мы Вас поздравляем и дарим в подарок сертификат</div>
-            <section id="promo" class="section-birthday">
+            <section id="promo" class="section-birthday" onclick="location.href='<?php echo !$auth ? 'login.php' : 'discount.php?birthday' ?>'">
                 <div class="div-promo-birthday">С Днем рождения!!!</div>
                 <div class="div-promo-discont">
                     <div class="div-discont-percent">5%</div>
                     <div class="div-discont-title">на все услуги салона</div>
                 </div>
+                <span class="tooltip-text">Нажми, чтобы получить скидку</span>
             </section>
         <?php } ?>
         <?php if ($newRegistration) { ?>
@@ -93,6 +94,8 @@
                         <?php echo discountCount($userLoginTime); ?>
                     </div>
                 </div>
+                <button type="submit" class="button-subscribe" id="subscribe" 
+                    onclick="location.href='<?php echo !$auth ? 'login.php' : 'discount.php?discount=newuser' ?>'">Получить скидку</button>
             </section>
         <?php } ?>
         <?php if (!$auth) {?>
@@ -103,7 +106,7 @@
                 <div class="div-promo-title">Скидки до 30% на все виды услуг</div>
                 <div class="div-promo-time">Акция действует с 01.11.2025 до 15.12.2025</div>
                 <button type="submit" class="button-subscribe" id="subscribe" 
-                    onclick="location.href='<?php echo !$auth ? 'login.php' : 'discount.php' ?>'">Получить скидку</button>
+                    onclick="location.href='<?php echo !$auth ? 'login.php' : 'discount.php?discount=friday' ?>'">Получить скидку</button>
             </div>
         </section>
         <?php } ?>
