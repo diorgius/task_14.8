@@ -73,7 +73,7 @@
                         onclick="location.href='logoff.php'">Выйти</button></div>
             <?php } ?>
         </nav>
-        <?php if (!$newRegistration && $userBirthdayCount === 1) { ?>
+        <?php if (!$newRegistration && $userBirthdayCount == 1) { ?>
             <div class="div-promo-birthday-sertificate">Мы Вас поздравляем и дарим в подарок сертификат</div>
             <section id="promo" class="section-birthday" onclick="location.href='<?php echo !$auth ? 'login.php' : 'discount.php?birthday' ?>'">
                 <div class="div-promo-birthday">С Днем рождения!!!</div>
